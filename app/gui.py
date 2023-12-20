@@ -1,6 +1,5 @@
-# gui.py
 import tkinter as tk
-from calculator import Calculator
+from calculator import Calculator  # Importe la classe Calculator du module calculator
 import math
 
 # Définition des variables globales
@@ -26,14 +25,19 @@ scientifique = [
 ]
 
 class CalculatorGUI:
+    """Classe pour la création de l'interface graphique de la calculatrice."""
+
     def __init__(self, root):
+        """Initialise la calculatrice GUI avec la racine (root) de l'application."""
         self.root = root
-        self.calculator = Calculator()
-        
+        self.calculator = Calculator()  # Initialise une instance de la classe Calculator
+
+        # Crée un cadre (frame) pour afficher l'expression
         self.frame2 = tk.Frame(self.root, bg="green", width=WIDTH)
         self.expression_label = tk.Label(self.frame2, text="", font=("Arial", 16))
 
     def configure_screen(self):
+        """Configure la disposition de l'interface graphique et ajoute un menu."""
         for i in range(10):
             self.root.grid_rowconfigure(i, weight=1)
 
@@ -51,6 +55,7 @@ class CalculatorGUI:
         self.change_panel(normal)
 
     def change_panel(self, panel):
+        """Change le panneau de boutons en fonction du mode sélectionné (normal ou scientifique)."""
         frame3 = tk.Frame(self.root, bg="blue", width=WIDTH)
         j = 0
         for i, ligne in enumerate(panel):
@@ -63,6 +68,7 @@ class CalculatorGUI:
         frame3.grid(row=2, column=0, rowspan=10, columnspan=4, sticky="nsew")
 
     def button_click(self, value):
+        """Gère le clic sur un bouton et met à jour l'expression affichée."""
         if value == "=":
             result = self.calculator.evaluate_expression()
             self.expression_label.config(text=result)
@@ -77,9 +83,11 @@ class CalculatorGUI:
             self.update_expression_label()
 
     def update_expression_label(self):
+        """Met à jour l'expression affichée dans l'étiquette."""
         self.expression_label.config(text=self.calculator.expression)
 
 def main():
+    """Fonction principale pour exécuter l'application."""
     root = tk.Tk()
     root.geometry(f"{WIDTH}x{HEIGHT}")
 
