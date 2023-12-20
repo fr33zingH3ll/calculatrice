@@ -6,9 +6,9 @@ import math
 # Définition des variables globales
 WIDTH, HEIGHT = 400, 700
 normal = [
-    {"%": "%", "CE": "CE"},
-    {"1/x": "", "^": "^", "x^1/2": "sqrt", "/": "/"},
-    {"7": "7", "8": "8", "9": "9", "*": "*"},
+    {"%": "%", "CE": "CE", "C": "C"},
+    {"": "", "^": "^", "√": "sqrt", "/": "/"},
+    {"7": "7", "8": "8", "9": "9", "x": "*"},
     {"4": "4", "5": "5", "6": "6", "-": "-"},
     {"1": "1", "2": "2", "3": "3", "+": "+"},
     {"": "", "0": "0", ",": ".", "=": "="},
@@ -68,6 +68,9 @@ class CalculatorGUI:
             self.expression_label.config(text=result)
         elif value == "CE":
             self.calculator.expression = ""
+            self.update_expression_label()
+        elif value == "C":
+            self.calculator.expression = self.calculator.expression[:-1]
             self.update_expression_label()
         else:
             self.calculator.button_click(value)
