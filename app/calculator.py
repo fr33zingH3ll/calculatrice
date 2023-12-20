@@ -8,7 +8,7 @@ class Calculator:
         self.binaire = {
             '+': lambda x, y: x + y,
             '-': lambda x, y: x - y,
-            '**': lambda x, y: x**y,
+            '^': lambda x, y: x**y,
             '*': lambda x, y: x * y,
             '/': lambda x, y: x / y,
         }
@@ -57,7 +57,8 @@ class Calculator:
             raise ValueError(f"Erreur d'évaluation avec l'opérateur {operator}")
 
     def evaluate_unary_operator(self, operator, operation):
+        if self.expression[:len(operator)] != operator:
+            raise ValueError("Mauvais operator")
         part = self.expression[len(operator):]
         x = float(part)
         return operation(x)
-

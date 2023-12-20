@@ -7,7 +7,7 @@ import math
 WIDTH, HEIGHT = 400, 700
 normal = [
     {"%": "%", "CE": "CE"},
-    {"1/x": "", "**": "**", "x^1/2": "sqrt", "/": "/"},
+    {"1/x": "", "^": "^", "x^1/2": "sqrt", "/": "/"},
     {"7": "7", "8": "8", "9": "9", "*": "*"},
     {"4": "4", "5": "5", "6": "6", "-": "-"},
     {"1": "1", "2": "2", "3": "3", "+": "+"},
@@ -17,8 +17,8 @@ normal = [
 scientifique = [
     {"%": "%", "CE": "CE"},
     {"sin": "sin", "cos": "cos", "tan": "tan", "exp": "exp"},
-    {"ln": "ln", "log": "log", "x^y": "**", "sqrt": "sqrt"},
-    {"(": "(", ")": ")", "π": str(math.pi), "e": str(math.e)},
+    {"ln": "ln", "log": "log", "x^y": "^", "sqrt": "sqrt"},
+    {"π": str(math.pi), "e": str(math.e)},
     {"7": "7", "8": "8", "9": "9", "*": "*"},
     {"4": "4", "5": "5", "6": "6", "-": "-"},
     {"1": "1", "2": "2", "3": "3", "+": "+"},
@@ -30,7 +30,6 @@ class CalculatorGUI:
         self.root = root
         self.calculator = Calculator()
         
-
         self.frame2 = tk.Frame(self.root, bg="green", width=WIDTH)
         self.expression_label = tk.Label(self.frame2, text="", font=("Arial", 16))
 
