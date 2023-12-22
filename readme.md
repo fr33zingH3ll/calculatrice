@@ -12,7 +12,7 @@ L'utilisateur peut basculer entre deux modes : "normal" et "scientifique". Le mo
 
 ## Évaluation des Expressions
 
-La classe Calculator gère l'évaluation des expressions mathématiques. Elle prend en charge les opérations binaires telles que l'addition, la soustraction, la multiplication, la division, et l'exponentiation, ainsi que des opérations unaires comme les fonctions trigonométriques, logarithmiques, la racine carrée, etc.
+La classe Calculator gère l'évaluation des expressions mathématiques. Elle est prise en charge par Mathics3 qui évalue les opérations telle que l'addition, la soustraction, la multiplication, la division, et l'exponentiation, ainsi que les fonctions trigonométriques, logarithmiques, la racine carrée, etc.
 
 Lorsqu'un bouton est cliqué dans l'interface graphique, la méthode button_click est appelée, mettant à jour l'expression en cours d'évaluation. Lorsque le bouton "=" est cliqué, la méthode evaluate_expression est appelée pour évaluer l'expression et afficher le résultat.
 
