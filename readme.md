@@ -16,8 +16,6 @@ La classe Calculator gère l'évaluation des expressions mathématiques. Elle pr
 
 Lorsqu'un bouton est cliqué dans l'interface graphique, la méthode button_click est appelée, mettant à jour l'expression en cours d'évaluation. Lorsque le bouton "=" est cliqué, la méthode evaluate_expression est appelée pour évaluer l'expression et afficher le résultat.
 
-Pour les expressions binaires, elles sont sous la forme (x {operator} y), pour les unaires ({operator}x). Si vous rentrez plus que sous ces formes la, par exemple (3+2%), la calculatrice ne sortiras rien. Le pourcentage n'est pas pris en charge. 
-
 ### Tests
 
 Des tests ont été effectués pour vérifier le bon fonctionnement de la calculatrice. Les cas de tests comprennent :
